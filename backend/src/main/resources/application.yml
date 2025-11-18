@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: dashboard
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:postgres}:${DB_PORT:5432}/${DB_NAME:dashboard}
+    username: ${DB_USER:dashboard}
+    password: ${DB_PASSWORD:dashboard}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.dashboard: DEBUG
+    org.springframework.web: INFO

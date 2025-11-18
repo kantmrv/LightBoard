@@ -1,0 +1,24 @@
+# Build directories
+build/
+.gradle/
+bin/
+out/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Other
+.git/
+.gitignore
+README.md
