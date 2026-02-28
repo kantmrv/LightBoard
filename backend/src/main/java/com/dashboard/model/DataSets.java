@@ -39,7 +39,6 @@ public class DataSets{
     @Column(name = "column_count")
     private Integer columnCount;
 
-
     @Getter
     @Enumerated(EnumType.STRING)
     @Column(name = "processing_status", nullable = false)

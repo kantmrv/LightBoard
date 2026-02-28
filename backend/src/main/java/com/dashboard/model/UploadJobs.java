@@ -32,7 +32,7 @@ public class UploadJobs {
     //текущее состояние
     @Getter
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
+    @Column(name = "status")
     private ProcessingStatus status;
 
     //тип задачи
@@ -41,11 +41,11 @@ public class UploadJobs {
     @Column(name = "type", nullable = false)
     private JobType type;
 
-    //
+    //обработано
     @Column(name = "processed_progress")
     private Integer processedProgress = 0;
 
-    //
+    //всего строк
     @Column(name = "total_progress")
     private Integer totalProgress = 0;
 
@@ -80,20 +80,3 @@ public class UploadJobs {
         }
     }
 }
-//        id — внутренний автоинкрементный идентификатор.
-//
-//        jobId — публичный уникальный идентификатор (обычно UUID), который отдаётся клиенту и используется для запросов статуса. Скрывать внутренний id от клиента — хорошая практика безопасности.
-//
-//        type — тип задачи (например, CSV_UPLOAD, REPORT_GENERATION), если система поддерживает несколько видов фоновых работ.
-//
-//        status — текущее состояние: PENDING (ожидает), PROCESSING (выполняется), COMPLETED (успешно завершена), FAILED (ошибка), CANCELLED (отменена). Это enum.
-//
-//        progress — сколько уже сделано (например, обработано строк) и сколько всего (общее количество). Можно хранить два числа: processed, total. Процент вычисляется на лету.
-//
-//        createdAt, startedAt, completedAt — временные метки для контроля длительности и очистки старых записей.
-//
-//        result — ссылка на результат работы: например, datasetId, сгенерированный отчёт, URL файла.
-//
-//        errorMessage — если статус FAILED, здесь хранится текст ошибки для диагностики.
-//
-//        params — параметры запуска (JSON-поле): имя файла, настройки и т.д., чтобы при восстановлении задачи знать, что делать.
